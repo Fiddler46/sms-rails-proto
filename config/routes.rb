@@ -3,5 +3,5 @@ Rails.application.routes.draw do
   resources :messages
   resources :teams
 
-  post 'trigger_notification' => ''
+  post 'trigger_notification' => 'trigger#notification'
 end
