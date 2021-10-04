@@ -4,9 +4,10 @@ class TriggerController < ApplicationController
         @message = Message.new(message_params)
         @id = params[:team_id]
         @content = params[:content]
-        @mob = Team.joins(:developers).where(team_id: @id).pluck(:mobile)
-        @mob = Team.joins(:developers).pluck(:mobile)
-        @mob = Team.includes(:developers).find(@id).pluck(:'developers.mobile')
+        # @mob = Team.joins(:developers).where(team_id: @id).pluck(:mobile)
+        # @mob = Team.joins(:developers).pluck(:mobile)
+        # @mob = Team.includes(:developers).find(@id).pluck(:'developers.mobile')
+        # @mob = Team.find(params[:team_id]).developers.pluck(:mobile)
         tim = Time.now
 
         if @message.save
